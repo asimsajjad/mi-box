@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/js/
+RewriteCond %{REQUEST_URI} !^/css/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/process.php
+RewriteCond %{REQUEST_URI} !^.js
+RewriteCond %{REQUEST_URI} !^.css
+RewriteCond %{REQUEST_URI} !^.min
+
+RewriteRule ^ /process.php?ref=$1  [L,NC,QSA]
